@@ -1,6 +1,7 @@
-{% extends 'base.html' %}
+{% extends exten %}
 {% block content %}
-<form  id="update_movies" method='post'>
+<form  id="update_movies" action="{{ url|safe }}" method='post'>
+	<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 	<button name="update_movies" value="update_movies" type="submit">Update Movies</button>
 </form>
 {% endblock %}
