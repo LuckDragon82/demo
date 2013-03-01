@@ -1,6 +1,7 @@
 from webapp2_extras.routes import RedirectRoute
 from webapp2_extras.routes import PathPrefixRoute
 import users
+import handlers
 
 
 _routes = [
@@ -9,7 +10,8 @@ _routes = [
         RedirectRoute('/geochart/', users.Geochart, name='geochart', strict_slash=True),
         RedirectRoute('/users/', users.List, name='user-list', strict_slash=True),
         RedirectRoute('/users/<user_id>/', users.Edit, name='user-edit', strict_slash=True, handler_method='edit')
-    ])
+    ]),
+    RedirectRoute('/admin/', handlers.Home, name='home', strict_slash=True)
 ]
 
 def get_routes():
