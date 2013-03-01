@@ -6,5 +6,4 @@ class Home(BaseHandler):
         return self.render_template('home.html', **params)
     
     def post(self):
-        pass
         self.redirect('/')
